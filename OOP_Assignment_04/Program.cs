@@ -46,6 +46,20 @@ namespace OOP_Assignment_04
             rectangle.Height = double.Parse(Console.ReadLine()!);
             rectangle.DisplayShapeInfo();
             #endregion
+
+            #region Q2
+            Console.WriteLine("\n");
+            IAuthenticationService basicAuthenticationService = new BasicAuthenticationService();
+            Console.Write("Enter UserName = ");
+            string username = Console.ReadLine()!;
+            Console.Write("Enter Password = ");
+            string password = Console.ReadLine()!;
+            Console.WriteLine("AuthenticateUser IS " + basicAuthenticationService.AuthenticateUser(username, password));
+            Console.Write("Enter Role     = ");
+            string role = Console.ReadLine()!;
+            Console.Write("AuthorizeUser    IS " + basicAuthenticationService.AuthorizeUser(username, role));
+            Console.WriteLine("\n");
+            #endregion
             #endregion
 
             Console.ReadKey();

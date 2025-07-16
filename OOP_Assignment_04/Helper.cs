@@ -41,4 +41,49 @@ public class Rectangle : IRectangle
     }
 }
 #endregion
+
+#region Q2
+internal interface IAuthenticationService
+{
+    public bool AuthenticateUser(string username, string password);
+    public bool AuthorizeUser(string username, string role);
+}
+public class BasicAuthenticationService : IAuthenticationService
+{
+    // Create Data For UserName
+    string[] UserName = { "AhmedSayed", "AboElSayed", "Sayed" };
+    // Create Data For Password
+    string[] Password = { "123ahmed", "1357Ahmed", "Sayed84" };
+
+
+    public bool AuthenticateUser(string username, string password)
+    {
+        if (username == null || password == null)
+            return false;
+        for (int i = 0; i < UserName.Length; i++)
+        {
+            if (UserName[i] == username && Password[i] == password)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    // Create Data For UserName
+    string[] Role = { "Admin", "admin", "AS_Admin" };
+    public bool AuthorizeUser(string username, string role)
+    {
+        if (username == null || role == null)
+            return false;
+        for (int i = 0; i < UserName.Length; i++)
+        {
+            if (UserName[i] == username && Role[i] == role)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+#endregion
 #endregion
