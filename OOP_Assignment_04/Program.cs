@@ -1,4 +1,6 @@
-﻿namespace OOP_Assignment_04
+﻿using System.Drawing;
+
+namespace OOP_Assignment_04
 {
     internal class Program
     {
@@ -30,6 +32,22 @@
             */
 
             #endregion
+
+            #region Part(2)
+            #region Q1
+            Circle circle = new Circle();
+            Console.Write("Enter Radius = ");
+            circle.Radius = double.Parse(Console.ReadLine()!);
+            circle.DisplayShapeInfo();
+            Rectangle rectangle = new Rectangle();
+            Console.Write("Enter Width = ");
+            rectangle.Width = double.Parse(Console.ReadLine()!);
+            Console.Write("Enter Height = ");
+            rectangle.Height = double.Parse(Console.ReadLine()!);
+            rectangle.DisplayShapeInfo();
+            #endregion
+            #endregion
+
             Console.ReadKey();
         }
     }
