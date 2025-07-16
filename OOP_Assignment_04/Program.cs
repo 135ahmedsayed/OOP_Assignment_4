@@ -60,6 +60,18 @@ namespace OOP_Assignment_04
             Console.Write("AuthorizeUser    IS " + basicAuthenticationService.AuthorizeUser(username, role));
             Console.WriteLine("\n");
             #endregion
+
+            #region Q3
+            string email = "ahmedshkra246@gmail.com";
+            string Phone = "+20100057933";
+            string UserName = "user123";
+            EmailNotificationService emailNotificationService = new EmailNotificationService();
+            SmsNotificationService smsNotificationService = new SmsNotificationService();
+            PushNotificationService pushNotificationService = new PushNotificationService();
+            emailNotificationService.SendNotification(email, "Welcome to our service!");
+            smsNotificationService.SendNotification(Phone, "Welcome to our service!");
+            pushNotificationService.SendNotification(UserName, "Welcome to our service!");
+            #endregion
             #endregion
 
             Console.ReadKey();

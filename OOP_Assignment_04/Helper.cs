@@ -86,4 +86,32 @@ public class BasicAuthenticationService : IAuthenticationService
     }
 }
 #endregion
+
+#region Q3
+internal interface INotificationService
+{
+    public void SendNotification(string recipient, string message);
+}
+public class EmailNotificationService : INotificationService
+{
+    public void SendNotification(string recipient, string message)
+    {
+        Console.WriteLine($"Email : {recipient}. You have A message : {message}");
+    }
+}
+public class SmsNotificationService : INotificationService
+{
+    public void SendNotification(string recipient, string message)
+    {
+        Console.WriteLine($"Phone Number : {recipient}. You have A message : {message}");
+    }
+}
+public class PushNotificationService : INotificationService
+{
+    public void SendNotification(string recipient, string message)
+    {
+        Console.WriteLine($"User : {recipient}. You have A message : {message}");
+    }
+}
+#endregion
 #endregion
